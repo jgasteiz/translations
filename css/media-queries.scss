@@ -1,0 +1,10 @@
+@media only screen and (max-width: 767px) {
+    div[role="main"] {
+        .flags {
+            .flag-column {
+                display: inline-block;
+                width: 80px !important;
+            }
+        }
+    }
+}

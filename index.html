@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Translations</title>
+
+	<link rel="stylesheet" href="foundation/stylesheets/foundation.min.css">
+	<link rel="stylesheet" href="foundation/stylesheets/app.css">
+	<link rel="stylesheet" href="css/base.css">
+</head>
+<body id="translationsapp">
+
+	<header>
+		<div class="row">
+			<div class="twelve columns">
+				<h1>Translations</h1>
+			</div>
+			<div class="six columns">
+				<input class="new english" type="text" placeholder="English">
+			</div>
+			<div class="six columns">
+				<input class="new polish" type="text" placeholder="Polish">
+			</div>
+		</div>
+	</header>
+
+	<div id="main" role="main">
+		<div class="row flags">
+			<div class="six columns flag-column">
+				<span class="flag english"></span>
+			</div>
+			<div class="six columns flag-column">
+				<span class="flag polish"></span>
+			</div>
+		</div>
+		<ul id="translation-list"></ul>
+	</section>
+
+	<footer>
+		<div class="row">
+			<div class="twelve columns">
+				<p>A simple backbone.js app built by Javi Manzano</p>
+			</div>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="js/json2.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/underscore.js"></script>
+	<script type="text/javascript" src="js/backbone.js"></script>
+	<script type="text/javascript" src="js/backbone-localstorage.js"></script>
+	<script type="text/javascript" src="js/translations.js"></script>
+
+</body>
+</html>
