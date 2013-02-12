@@ -109,17 +109,17 @@ $(function() {
         // TODO: fix polish. Not working fine yet (convert weird chars to some
         // valid format in urls).
         play: function(e) {
-            var url = 'http://translate.google.com/translate_tts?ie=UTF-8',
-                query = '&q=' + this.toQuery($(e.target).html()),
-                lang = '&tl=' + $(e.target).attr('data-lang'),
+            var url = 'http://translate.google.com/translate_tts',
+                lang = '?tl=' + $(e.target).attr('data-lang'),
+                query = '&q=' + $(e.target).html(),
                 compiled = _.template(
                 '<video controls="" autoplay="" name="media">' +
-                    '<source src="<%= url %><%= query %><%= lang %>" type="audio/mpeg">' +
+                    '<source src="<%= url %><%= lang %><%= query %>" type="audio/mpeg">' +
                 '</video>');
             this.video.html(compiled({
                 url: url,
-                query: query,
-                lang: lang
+                lang: lang,
+                query: query
             }));
         },
 
