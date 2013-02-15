@@ -109,25 +109,22 @@ $(function() {
         // TODO: fix polish. Not working fine yet (convert weird chars to some
         // valid format in urls).
         play: function(e) {
-            var url = 'http://translate.google.com/translate_tts',
-                lang = '?tl=' + $(e.target).attr('data-lang'),
-                query = '&q=' + $(e.target).html(),
+            var args =
+                {
+                    tl: $(e.target).attr('data-lang'),
+                    q: $(e.target).html()
+                },
+                url = 'http://translate.google.com/translate_tts?',
+                query = $.param(args),
                 compiled = _.template(
                 '<video controls="" autoplay="" name="media">' +
-                    '<source src="<%= url %><%= lang %><%= query %>" type="audio/mpeg">' +
+                    '<source src="<%= url %><%= query %>" type="audio/mpeg">' +
                 '</video>');
             this.video.html(compiled({
                 url: url,
-                lang: lang,
                 query: query
             }));
-        },
-
-        // I felt dirty doing this in a single line, so I created this function :)
-        toQuery: function(string) {
-            return string.toLowerCase().split(' ').join('%20');
         }
-
     });
 
     var AppView = Backbone.View.extend({
