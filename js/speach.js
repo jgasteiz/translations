@@ -7,7 +7,7 @@ $(function() {
             return {
                 speach: 'the text',
                 language: undefined,
-                weight: 0
+                weight: 999
             };
         }
     });
@@ -26,7 +26,7 @@ $(function() {
 
         // TODO: move this to the html.
         template: _.template(
-            '<div class="label-box" data-id="<%= id %>">' +
+            '<div class="label-box" data-weight="<%= weight %>">' +
                 '<label data-lang="pl"><%= speach %></label>' +
                 '<i class="fui-new-16 edit"></i>' +
                 '<i class="fui-cross-16 destroy"></i>' +
@@ -126,7 +126,7 @@ $(function() {
         // TODO: improve this. It's making me cry :(
         updateWeight: function() {
             this.speachs.each(function(item) {
-                var domElement = $('#speach-list li').find('div[data-id=' + item.id + ']'),
+                var domElement = $('#speach-list li').find('div[data-weight=' + item.get('weight') + ']'),
                     parentIndex = domElement.parent().index();
                 item.save({weight: parentIndex});
             });
