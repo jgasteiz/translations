@@ -6,7 +6,8 @@ $(function() {
         defaults: function() {
             return {
                 speach: 'the text',
-                language: undefined
+                language: undefined,
+                weight: 0
             };
         }
     });
@@ -25,7 +26,7 @@ $(function() {
 
         // TODO: move this to the html.
         template: _.template(
-            '<div class="label-box">' +
+            '<div class="label-box" data-id="<%= id %>">' +
                 '<label data-lang="pl"><%= speach %></label>' +
                 '<i class="fui-new-16 edit"></i>' +
                 '<i class="fui-cross-16 destroy"></i>' +
@@ -118,13 +119,27 @@ $(function() {
         el: $('#speachapp'),
         events: {
             'keypress .new': 'createOnEnter',
-            'click a.new': 'create'
+            'click a.new': 'create',
+            'sortupdate .sortable': 'updateWeight'
+        },
+
+        // TODO: improve this. It's making me cry :(
+        updateWeight: function() {
+            this.speachs.each(function(item) {
+                var domElement = $('#speach-list li').find('div[data-id=' + item.id + ']'),
+                    parentIndex = domElement.parent().index();
+                item.save({weight: parentIndex});
+            });
         },
 
         initialize: function() {
             this.speach = this.$('.new.speach');
 
             this.speachs = new SpeachList();
+
+            this.speachs.comparator = function (item) {
+                return item.get('weight');
+            },
 
             this.listenTo(this.speachs, 'add', this.addOne);
             this.listenTo(this.speachs, 'reset', this.addAll);
@@ -153,6 +168,8 @@ $(function() {
         // Render all speachs.
         addAll: function() {
             this.speachs.each(this.addOne, this);
+            $('.sortable').sortable();
+            this.speachs.sort();
         },
 
         // Create a new speach when enter key is pressed.

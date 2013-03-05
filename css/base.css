@@ -2586,6 +2586,12 @@ div[role="main"] #speach-list {
       background-color: transparent; }
       div[role="main"] #speach-list li.editing .label-box label, div[role="main"] #speach-list li.editing .label-box i {
         display: none; }
+    div[role="main"] #speach-list li.sortable-dragging {
+      border: none; }
+    div[role="main"] #speach-list li.sortable-placeholder {
+      border: 1px dashed #CCC;
+      background: none;
+      height: 45px; }
 
 @media only screen and (max-width: 767px) {
   div[role="main"] .flags .flag-column {
