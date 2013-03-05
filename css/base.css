@@ -2534,9 +2534,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300; }
 
-header textarea {
-  display: block;
-  width: 300px; }
+header input[type="text"] {
+  width: 98%; }
 
 div[role="main"] #speach-list {
   margin: 0;
@@ -2548,30 +2547,31 @@ div[role="main"] #speach-list {
     margin-bottom: 6px;
     padding-bottom: 5px;
     position: relative; }
-    div[role="main"] #speach-list li textarea,
     div[role="main"] #speach-list li input[type="text"] {
       display: none; }
-    div[role="main"] #speach-list li .label-box label {
-      margin: 0;
-      padding: 10px 0; }
-    div[role="main"] #speach-list li .label-box i {
-      position: absolute;
-      display: none;
-      cursor: pointer;
-      font-size: .7em;
-      top: 12px; }
-      div[role="main"] #speach-list li .label-box i.destroy {
-        right: 10px; }
-      div[role="main"] #speach-list li .label-box i.edit {
-        right: 36px; }
-      div[role="main"] #speach-list li .label-box i.sound {
-        opacity: 0.5;
-        right: 50%;
-        z-index: -99; }
-      div[role="main"] #speach-list li .label-box i:hover {
-        color: #FF0000; }
-    div[role="main"] #speach-list li .label-box:hover i {
-      display: inline-block; }
+    div[role="main"] #speach-list li .label-box {
+      min-height: 40px; }
+      div[role="main"] #speach-list li .label-box label {
+        margin: 0;
+        padding: 10px 0; }
+      div[role="main"] #speach-list li .label-box i {
+        position: absolute;
+        display: none;
+        cursor: pointer;
+        font-size: .7em;
+        top: 12px; }
+        div[role="main"] #speach-list li .label-box i.destroy {
+          right: 10px; }
+        div[role="main"] #speach-list li .label-box i.edit {
+          right: 36px; }
+        div[role="main"] #speach-list li .label-box i.sound {
+          opacity: 0.5;
+          right: 50%;
+          z-index: -99; }
+        div[role="main"] #speach-list li .label-box i:hover {
+          color: #FF0000; }
+      div[role="main"] #speach-list li .label-box:hover i {
+        display: inline-block; }
     div[role="main"] #speach-list li .cancel {
       margin-right: 10px; }
     div[role="main"] #speach-list li .save, div[role="main"] #speach-list li .cancel {
@@ -2580,7 +2580,6 @@ div[role="main"] #speach-list {
       display: none; }
     div[role="main"] #speach-list li.editing .save, div[role="main"] #speach-list li.editing .cancel {
       display: inline-block; }
-    div[role="main"] #speach-list li.editing textarea,
     div[role="main"] #speach-list li.editing input[type="text"] {
       display: inline-block; }
     div[role="main"] #speach-list li.editing .label-box {

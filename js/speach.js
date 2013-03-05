@@ -160,14 +160,14 @@ $(function() {
             if (e.keyCode != 13) {
                 return;
             }
-            if (!this.speach.val()) {
-                return;
-            }
             this.create();
         },
 
         // Create a new speach.
         create: function() {
+            if (!this.speach.val()) {
+                return;
+            }
             this.speachs.create({
                 speach: this.speach.val()
             });
