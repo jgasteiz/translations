@@ -1,50 +1,67 @@
-@import 'font-awesome';
+@import 'FlatUI/sass/flat-ui';
 
-input[type="text"] {
-    outline: none;
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 20px 0 40px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+header {
+    textarea {
+        display: block;
+        width: 300px;
+    }
 }
 div[role="main"] {
-    #translation-list {
-        padding: 0;
+    #speach-list {
+        margin: 0;
+        padding: 20px 0 0;
         li {
-            border-bottom: 1px solid #cccccc; 
+            border-bottom: 1px solid #cccccc;
             font-size: 24px;
             list-style: none;
-            margin-bottom: 10px;
-            padding: 10px 0;
+            margin-bottom: 6px;
+            padding-bottom: 5px;
             position: relative;
+            textarea,
             input[type="text"] {
                 display: none;
             }
             .label-box {
                 label {
-                    padding: 5px 0;
+                    margin: 0;
+                    padding: 10px 0;
                 }
-                &:nth-child(1) {
-                    input[type="text"] {
-                        border: 1px solid #2ba6cb;
+                i {
+                    position: absolute;
+                    display: none;
+                    cursor: pointer;
+                    font-size: .7em;
+                    top: 12px;
+                    &.destroy {
+                        right: 10px;
                     }
-                }
-                &:nth-child(2) {
-                    input[type="text"] {
-                        border: 1px solid #5da423;
+                    &.edit {
+                        right: 36px;
                     }
-                }
-            }
-            i {
-                position: absolute;
-                display: none;
-                cursor: pointer;
-                &.destroy {
-                    right: 10px;
-                    top: 0;
-                }
-                &.edit {
-                    right: 8px;
-                    top: 18px;
+                    &.sound {
+                        opacity: 0.5;
+                        right: 50%;
+                        z-index: -99;
+                    }
+                    &:hover {
+                        color: #FF0000;
+                    }
                 }
                 &:hover {
-                    color: #FF0000;
+                    i {
+                        display: inline-block;
+                    }
                 }
             }
             .cancel {
@@ -56,38 +73,20 @@ div[role="main"] {
             .video {
                 display: none;
             }
-            &:hover {
-                i {
-                    display: inline-block;
-                }
-            }
             &.editing {
                 .save, .cancel {
                     display: inline-block;
                 }
-                label, i {
-                    display: none;
-                }
+                textarea,
                 input[type="text"] {
                     display: inline-block;
                 }
-            }
-        }
-    }
-    .flags {
-        border-bottom: 1px solid #cccccc; 
-        margin-bottom: 10px;
-        padding-bottom: 10px;
-        .flag {
-            box-shadow: 0px 1px 2px #222;
-            display: inline-block;
-            height: 11px;
-            width: 16px;
-            &.english {
-                background-image: url(../img/gb.png);
-            }
-            &.polish {
-                background-image: url(../img/pl.png);
+                .label-box {
+                    background-color: transparent;
+                    label, i {
+                        display: none;
+                    }
+                }
             }
         }
     }

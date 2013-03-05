@@ -24,21 +24,23 @@ $(function() {
 
     // Main view for Translation model.
     var TranslationView = Backbone.View.extend({
-        
+
         tagName: 'li',
         className: 'row',
 
         // TODO: move this to the html.
         template: _.template(
             '<div class="six columns label-box">' +
-                '<label class="english" data-lang="en"><%= english %></label>' +
-                '<input class="edit english" type="text" value="<%= english %>" />' +
-            '</div>' +
-            '<div class="six columns label-box">' +
                 '<label class="polish" data-lang="pl"><%= polish %></label>' +
-                '<i class="icon-edit edit"></i>' +
+                '<i class="icon-edit edit polish"></i>' +
                 '<i class="icon-trash destroy"></i>' +
                 '<input class="edit polish" type="text" value="<%= polish %>" />' +
+            '</div>' +
+            '<div class="six columns label-box">' +
+                '<label class="english" data-lang="en"><%= english %></label>' +
+                '<i class="icon-edit edit english"></i>' +
+                '<i class="icon-trash destroy"></i>' +
+                '<input class="edit english" type="text" value="<%= english %>" />' +
             '</div>' +
             '<div class="twelve columns">' +
                 '<a class="secondary button cancel" href="#">Cancel</a>' +
@@ -47,7 +49,6 @@ $(function() {
             '<div class="video"></div>'),
 
         events: {
-            'dblclick .label-box' : 'edit',
             'click i.destroy'     : 'clear',
             'click i.edit'        : 'edit',
             'keypress .edit'      : 'updateOnEnter',
@@ -63,16 +64,21 @@ $(function() {
 
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
-            this.english = this.$('.edit.english');
-            this.polish = this.$('.edit.polish');
+            this.english = this.$('input.edit.english');
+            this.polish = this.$('input.edit.polish');
             this.video = this.$('.video');
             return this;
         },
 
         // Enables editing mode.
-        edit: function() {
+        edit: function(e) {
             this.$el.addClass('editing');
-            this.english.focus();
+            if ($(e.target).hasClass('english')) {
+                this.english.focus();
+            }
+            else {
+                this.polish.focus();
+            }
         },
 
         // Close editing mode discarding changes.

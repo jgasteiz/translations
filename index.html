@@ -1,58 +1,41 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-	<meta charset="UTF-8">
-	<title>Translations</title>
-	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-	<meta name="author" content="Javi Manzano">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Speach</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <meta name="author" content="Javi Manzano">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="foundation/stylesheets/foundation.min.css">
-	<link rel="stylesheet" href="foundation/stylesheets/app.css">
-	<link rel="stylesheet" href="css/base.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic|Open+Sans:300italic,400italic,600italic,300,400,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.min.css">
 </head>
-<body id="translationsapp">
+<body id="speachapp">
 
-	<header>
-		<div class="row">
-			<div class="twelve columns">
-				<h1>Translations</h1>
-			</div>
-			<div class="six columns">
-				<input class="new english" type="text" placeholder="English">
-			</div>
-			<div class="six columns">
-				<input class="new polish" type="text" placeholder="Polish">
-			</div>
-		</div>
-	</header>
+    <header class="container-fluid">
+        <div class="row-fluid">
+            <div class="span3">
+                <h1>Speach</h1>
+            </div>
+            <div class="span9">
+                <textarea class="new speach" type="text" placeholder="Write here"></textarea>
+                <a class="btn btn-primary new" href="#">Save</a>
+            </div>
+        </div>
+    </header>
 
-	<div id="main" role="main">
-		<div class="row flags">
-			<div class="six columns flag-column">
-				<span class="flag english"></span>
-			</div>
-			<div class="six columns flag-column">
-				<span class="flag polish"></span>
-			</div>
-		</div>
-		<ul id="translation-list"></ul>
-	</section>
+    <div id="main" role="main" class="container-fluid">
+        <ul id="speach-list"></ul>
+    </section>
 
-	<footer>
-		<div class="row">
-			<div class="twelve columns">
-				<p>A simple backbone.js app built by <a href="http://javimanzano.me/">Javi Manzano</a>. See in <a href="https://github.com/jgasteiz/translations">github</a>.</p>
-			</div>
-		</div>
-	</footer>
-
-	<script type="text/javascript" src="js/json2.js"></script>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/underscore.js"></script>
-	<script type="text/javascript" src="js/backbone.js"></script>
-	<script type="text/javascript" src="js/backbone-localstorage.js"></script>
-	<script type="text/javascript" src="js/translations.js"></script>
+    <script type="text/javascript" src="js/json2.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/underscore.js"></script>
+    <script type="text/javascript" src="js/backbone.js"></script>
+    <script type="text/javascript" src="js/backbone-localstorage.js"></script>
+    <script type="text/javascript" src="js/speach.js"></script>
 
 </body>
 </html>
