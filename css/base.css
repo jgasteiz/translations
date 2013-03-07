@@ -2527,71 +2527,107 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 800px;
   padding: 20px 0 40px; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300; }
 
-header input[type="text"] {
-  width: 98%; }
+input[type="text"] {
+  width: 96%; }
 
-div[role="main"] #speach-list {
+div[role="main"] #speach-list,
+div[role="main"] #category-list {
   margin: 0;
   padding: 20px 0 0; }
-  div[role="main"] #speach-list li {
+  div[role="main"] #speach-list li,
+  div[role="main"] #category-list li {
     border-bottom: 1px solid #cccccc;
     font-size: 24px;
     list-style: none;
     margin-bottom: 6px;
     padding-bottom: 5px;
     position: relative; }
-    div[role="main"] #speach-list li input[type="text"] {
+    div[role="main"] #speach-list li select,
+    div[role="main"] #speach-list li input[type="text"],
+    div[role="main"] #category-list li select,
+    div[role="main"] #category-list li input[type="text"] {
       display: none; }
-    div[role="main"] #speach-list li .label-box {
+    div[role="main"] #speach-list li .label-box,
+    div[role="main"] #category-list li .label-box {
       min-height: 40px; }
-      div[role="main"] #speach-list li .label-box label {
+      div[role="main"] #speach-list li .label-box label,
+      div[role="main"] #category-list li .label-box label {
         margin: 0;
         padding: 10px 0; }
-      div[role="main"] #speach-list li .label-box i {
+      div[role="main"] #speach-list li .label-box i,
+      div[role="main"] #category-list li .label-box i {
         position: absolute;
         display: none;
         cursor: pointer;
         font-size: .7em;
         top: 12px; }
-        div[role="main"] #speach-list li .label-box i.destroy {
+        div[role="main"] #speach-list li .label-box i.destroy,
+        div[role="main"] #category-list li .label-box i.destroy {
           right: 10px; }
-        div[role="main"] #speach-list li .label-box i.edit {
+        div[role="main"] #speach-list li .label-box i.edit,
+        div[role="main"] #category-list li .label-box i.edit {
           right: 36px; }
-        div[role="main"] #speach-list li .label-box i.sound {
+        div[role="main"] #speach-list li .label-box i.sound,
+        div[role="main"] #category-list li .label-box i.sound {
           opacity: 0.5;
           right: 50%;
           z-index: -99; }
-        div[role="main"] #speach-list li .label-box i:hover {
+        div[role="main"] #speach-list li .label-box i:hover,
+        div[role="main"] #category-list li .label-box i:hover {
           color: #FF0000; }
-      div[role="main"] #speach-list li .label-box:hover i {
+      div[role="main"] #speach-list li .label-box:hover i,
+      div[role="main"] #category-list li .label-box:hover i {
         display: inline-block; }
-    div[role="main"] #speach-list li .cancel {
+    div[role="main"] #speach-list li .cancel,
+    div[role="main"] #category-list li .cancel {
       margin-right: 10px; }
-    div[role="main"] #speach-list li .save, div[role="main"] #speach-list li .cancel {
+    div[role="main"] #speach-list li .save, div[role="main"] #speach-list li .cancel,
+    div[role="main"] #category-list li .save,
+    div[role="main"] #category-list li .cancel {
       display: none; }
-    div[role="main"] #speach-list li .video {
+    div[role="main"] #speach-list li .video,
+    div[role="main"] #category-list li .video {
       display: none; }
-    div[role="main"] #speach-list li.editing .save, div[role="main"] #speach-list li.editing .cancel {
+    div[role="main"] #speach-list li.editing .save, div[role="main"] #speach-list li.editing .cancel,
+    div[role="main"] #category-list li.editing .save,
+    div[role="main"] #category-list li.editing .cancel {
       display: inline-block; }
-    div[role="main"] #speach-list li.editing input[type="text"] {
+    div[role="main"] #speach-list li.editing select,
+    div[role="main"] #speach-list li.editing input[type="text"],
+    div[role="main"] #category-list li.editing select,
+    div[role="main"] #category-list li.editing input[type="text"] {
       display: inline-block; }
-    div[role="main"] #speach-list li.editing .label-box {
+    div[role="main"] #speach-list li.editing .label-box,
+    div[role="main"] #category-list li.editing .label-box {
       background-color: transparent; }
-      div[role="main"] #speach-list li.editing .label-box label, div[role="main"] #speach-list li.editing .label-box i {
+      div[role="main"] #speach-list li.editing .label-box label, div[role="main"] #speach-list li.editing .label-box i,
+      div[role="main"] #category-list li.editing .label-box label,
+      div[role="main"] #category-list li.editing .label-box i {
         display: none; }
-    div[role="main"] #speach-list li.sortable-dragging {
+    div[role="main"] #speach-list li.sortable-dragging,
+    div[role="main"] #category-list li.sortable-dragging {
       border: none; }
-    div[role="main"] #speach-list li.sortable-placeholder {
+    div[role="main"] #speach-list li.sortable-placeholder,
+    div[role="main"] #category-list li.sortable-placeholder {
       border: 1px dashed #CCC;
       background: none;
       height: 45px; }
+    div[role="main"] #speach-list li.category .label-box,
+    div[role="main"] #category-list li.category .label-box {
+      min-height: 20px; }
+      div[role="main"] #speach-list li.category .label-box label,
+      div[role="main"] #category-list li.category .label-box label {
+        padding: 5px 0; }
+      div[role="main"] #speach-list li.category .label-box i,
+      div[role="main"] #category-list li.category .label-box i {
+        top: 6px; }
 
 @media only screen and (max-width: 767px) {
   div[role="main"] .flags .flag-column {
